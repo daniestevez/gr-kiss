@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<block>
+  <name>KISS to PDU</name>
+  <key>kiss_kiss_to_pdu</key>
+  <category>kiss</category>
+  <import>import kiss</import>
+  <make>kiss.kiss_to_pdu()</make>
+  <sink>
+    <name>in</name>
+    <type>message</type>
+  </sink>
+
+  <source>
+    <name>out</name>
+    <type>message</type>
+  </source>
+</block>

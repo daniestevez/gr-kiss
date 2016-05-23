@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<block>
+  <name>HDLC Framer</name>
+  <key>kiss_hdlc_framer</key>
+  <category>kiss</category>
+  <import>import kiss</import>
+  <make>kiss.hdlc_framer(preamble_bytes=$preamble_bytes, postamble_bytes=$postamble_bytes)</make>
+  <param>
+    <name>Preamble bytes</name>
+    <key>preamble_bytes</key>
+    <value>50</value>
+    <type>int</type>
+  </param>
+  <param>
+    <name>Postamble bytes</name>
+    <key>postamble_bytes</key>
+    <value>7</value>
+    <type>int</type>
+  </param>
+
+  <sink>
+    <name>in</name>
+    <type>message</type>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>message</type>
+  </source>
+</block>

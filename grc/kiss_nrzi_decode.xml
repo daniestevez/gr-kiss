@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<block>
+  <name>NRZI Decode</name>
+  <key>kiss_nrzi_decode</key>
+  <category>kiss</category>
+  <import>import kiss</import>
+  <make>kiss.nrzi_decode()</make>
+  <sink>
+    <name>in</name>
+    <type>byte</type>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>byte</type>
+  </source>
+</block>
