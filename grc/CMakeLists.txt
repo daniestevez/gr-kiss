@@ -23,5 +23,6 @@ install(FILES
     kiss_hdlc_framer.xml
     kiss_nrzi_encode.xml
     kiss_nrzi_decode.xml
-    kiss_hdlc_deframer.xml DESTINATION share/gnuradio/grc/blocks
+    kiss_hdlc_deframer.xml
+    kiss_check_address.xml DESTINATION share/gnuradio/grc/blocks
 )

@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<block>
+  <name>Check AX.25 address</name>
+  <key>kiss_check_address</key>
+  <category>[kiss]</category>
+  <import>import kiss</import>
+  <make>kiss.check_address($address, $direction)</make>
+  <param>
+    <name>Address</name>
+    <key>address</key>
+    <type>string</type>
+  </param>
+  <param>
+    <name>Direction</name>
+    <key>direction</key>
+    <type>string</type>
+    <option>
+      <name>From</name>
+      <key>"from"</key>
+    </option>
+    <option>
+      <name>To</name>
+      <key>"to"</key>
+    </option>
+  </param>
+
+  <sink>
+    <name>in</name>
+    <type>message</type>
+  </sink>
+
+  <source>
+    <name>ok</name>
+    <type>message</type>
+    <optional>1</optional>
+  </source>
+    <source>
+    <name>fail</name>
+    <type>message</type>
+    <optional>1</optional>
+  </source>
+</block>
