@@ -29,31 +29,25 @@ import array
 
 from kiss import *
 
-class kiss_to_pdu(gr.basic_block):
+class kiss_to_pdu(gr.sync_block):
     """
     docstring for block kiss_to_pdu
     """
     def __init__(self):
-        gr.basic_block.__init__(self,
+        gr.sync_block.__init__(self,
             name="kiss_to_pdu",
-            in_sig=[],
+            in_sig=[numpy.uint8],
             out_sig=[])
 
         self.kiss = collections.deque()
         self.pdu = list()
         self.transpose = False
 
-        self.message_port_register_in(pmt.intern('in'))
-        self.set_msg_handler(pmt.intern('in'), self.handle_msg)
         self.message_port_register_out(pmt.intern('out'))
 
-    def handle_msg(self, msg_pmt):
-        msg = pmt.cdr(msg_pmt)
-        if not pmt.is_u8vector(msg):
-            print "[ERROR] Received invalid message type. Expected u8vector"
-            return
-        
-        self.kiss.extend(pmt.u8vector_elements(msg))
+    def work(self, input_items, output_items):
+#    def handle_msg(self, msg_pmt):
+        self.kiss.extend(input_items[0])
         
         while self.kiss:
             c = self.kiss.popleft()
@@ -72,4 +66,6 @@ class kiss_to_pdu(gr.basic_block):
                 self.transpose = True
             else:
                 self.pdu.append(c)
+
+        return len(input_items[0])
 

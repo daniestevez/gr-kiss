@@ -7,7 +7,7 @@
   <make>kiss.kiss_to_pdu()</make>
   <sink>
     <name>in</name>
-    <type>message</type>
+    <type>byte</type>
   </sink>
 
   <source>
