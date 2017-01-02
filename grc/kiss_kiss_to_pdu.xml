@@ -4,7 +4,23 @@
   <key>kiss_kiss_to_pdu</key>
   <category>kiss</category>
   <import>import kiss</import>
-  <make>kiss.kiss_to_pdu()</make>
+  <make>kiss.kiss_to_pdu($control_byte)</make>
+
+  <param>
+    <name>Expect control byte</name>
+    <key>control_byte</key>
+    <value>True</value>
+    <type>bool</type>
+     <option>
+       <name>Yes</name>
+       <key>True</key>
+     </option>
+     <option>
+       <name>No</name>
+       <key>False</key>
+     </option>
+  </param>
+  
   <sink>
     <name>in</name>
     <type>byte</type>
