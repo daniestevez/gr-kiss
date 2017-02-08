@@ -59,6 +59,12 @@ class check_address(gr.basic_block):
             return
         packet = array.array("B", pmt.u8vector_elements(msg))
 
+        # check packet length
+        # an AX.25 header with 2 addresses, control and PID is 16 bytes
+        if len(packet) < 16:
+            self.message_port_pub(pmt.intern('fail'), msg_pmt)
+            return
+
         if self.direction == 'to':
             address = packet[:7]
         else:
