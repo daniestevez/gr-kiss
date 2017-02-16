@@ -1,15 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<?grc format='1' created='3.7.8'?>
+<?grc format='1' created='3.7.10'?>
 <flow_graph>
   <timestamp>Thu May  5 22:02:58 2016</timestamp>
   <block>
     <key>options</key>
     <param>
       <key>author</key>
-      <value></value>
-    </param>
-    <param>
-      <key>alias</key>
       <value></value>
     </param>
     <param>
@@ -45,6 +41,10 @@
       <value>qt_gui</value>
     </param>
     <param>
+      <key>hier_block_src_path</key>
+      <value>.:</value>
+    </param>
+    <param>
       <key>id</key>
       <value>top_block</value>
     </param>
@@ -53,8 +53,16 @@
       <value>0</value>
     </param>
     <param>
+      <key>qt_qss_theme</key>
+      <value></value>
+    </param>
+    <param>
       <key>realtime_scheduling</key>
       <value></value>
+    </param>
+    <param>
+      <key>run_command</key>
+      <value>{python} -u {filename}</value>
     </param>
     <param>
       <key>run_options</key>
@@ -136,6 +144,10 @@
     <param>
       <key>const_points</key>
       <value>[-1, 1]</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>calcdist</value>
     </param>
     <param>
       <key>dims</key>
@@ -767,6 +779,53 @@
     </param>
   </block>
   <block>
+    <key>blocks_pdu_to_tagged_stream</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(488, 708)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>blocks_pdu_to_tagged_stream_0_0</value>
+    </param>
+    <param>
+      <key>type</key>
+      <value>byte</value>
+    </param>
+    <param>
+      <key>tag</key>
+      <value>packet_len</value>
+    </param>
+    <param>
+      <key>maxoutbuf</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>minoutbuf</key>
+      <value>0</value>
+    </param>
+  </block>
+  <block>
     <key>blocks_socket_pdu</key>
     <param>
       <key>alias</key>
@@ -786,7 +845,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(328, 672)</value>
+      <value>(288, 672)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1340,7 +1399,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(760, 693)</value>
+      <value>(928, 700)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1386,8 +1445,12 @@
       <value>1</value>
     </param>
     <param>
+      <key>control_byte</key>
+      <value>True</value>
+    </param>
+    <param>
       <key>_coordinate</key>
-      <value>(568, 705)</value>
+      <value>(720, 708)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -1603,6 +1666,10 @@
     <param>
       <key>autoscale</key>
       <value>False</value>
+    </param>
+    <param>
+      <key>axislabels</key>
+      <value>True</value>
     </param>
     <param>
       <key>alias</key>
@@ -1952,6 +2019,10 @@
       <value>1.0</value>
     </param>
     <param>
+      <key>axislabels</key>
+      <value>True</value>
+    </param>
+    <param>
       <key>bw</key>
       <value>samp_rate</value>
     </param>
@@ -2220,12 +2291,20 @@
       <value>firdes.WIN_BLACKMAN_hARRIS</value>
     </param>
     <param>
+      <key>label</key>
+      <value>Relative Gain</value>
+    </param>
+    <param>
       <key>ymax</key>
       <value>10</value>
     </param>
     <param>
       <key>ymin</key>
       <value>-140</value>
+    </param>
+    <param>
+      <key>units</key>
+      <value>dB</value>
     </param>
   </block>
   <connection>
@@ -2295,10 +2374,16 @@
     <sink_key>0</sink_key>
   </connection>
   <connection>
-    <source_block_id>blocks_socket_pdu_0</source_block_id>
+    <source_block_id>blocks_pdu_to_tagged_stream_0_0</source_block_id>
     <sink_block_id>kiss_kiss_to_pdu_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>blocks_socket_pdu_0</source_block_id>
+    <sink_block_id>blocks_pdu_to_tagged_stream_0_0</sink_block_id>
     <source_key>pdus</source_key>
-    <sink_key>in</sink_key>
+    <sink_key>pdus</sink_key>
   </connection>
   <connection>
     <source_block_id>blocks_unpacked_to_packed_xx_0</source_block_id>
