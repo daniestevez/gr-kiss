@@ -27,7 +27,7 @@ import collections
 import pmt
 import array
 
-from kiss import *
+from gr_kiss import *
 
 class pdu_to_kiss(gr.basic_block):
     """

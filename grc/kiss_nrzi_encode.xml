@@ -2,9 +2,9 @@
 <block>
   <name>NRZI Encode</name>
   <key>kiss_nrzi_encode</key>
-  <category>kiss</category>
-  <import>import kiss</import>
-  <make>kiss.nrzi_encode()</make>
+  <category>gr_kiss</category>
+  <import>import gr_kiss</import>
+  <make>gr_kiss.nrzi_encode()</make>
   <sink>
     <name>in</name>
     <type>byte</type>

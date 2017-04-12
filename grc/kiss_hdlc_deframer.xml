@@ -2,9 +2,9 @@
 <block>
   <name>HDLC Deframer</name>
   <key>kiss_hdlc_deframer</key>
-  <category>kiss</category>
-  <import>import kiss</import>
-  <make>kiss.hdlc_deframer(check_fcs=$check_fcs, max_length=$max_length)</make>
+  <category>gr_kiss</category>
+  <import>import gr_kiss</import>
+  <make>gr_kiss.hdlc_deframer(check_fcs=$check_fcs, max_length=$max_length)</make>
   <param>
     <name>Check FCS</name>
     <key>check_fcs</key>

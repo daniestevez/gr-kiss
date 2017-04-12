@@ -69,7 +69,7 @@ endif()
 include(GrPlatform) #define LIB_SUFFIX
 set(GR_RUNTIME_DIR      bin)
 set(GR_LIBRARY_DIR      lib${LIB_SUFFIX})
-set(GR_INCLUDE_DIR      include/kiss)
+set(GR_INCLUDE_DIR      include/gr_kiss)
 set(GR_DATA_DIR         share)
 set(GR_PKG_DATA_DIR     ${GR_DATA_DIR}/${CMAKE_PROJECT_NAME})
 set(GR_DOC_DIR          ${GR_DATA_DIR}/doc)
@@ -164,7 +164,7 @@ add_custom_target(uninstall
 ########################################################################
 # Add subdirectories
 ########################################################################
-add_subdirectory(include/kiss)
+add_subdirectory(include/gr_kiss)
 add_subdirectory(lib)
 add_subdirectory(swig)
 add_subdirectory(python)
@@ -180,5 +180,5 @@ if(NOT CMAKE_MODULES_DIR)
 endif(NOT CMAKE_MODULES_DIR)
 
 install(FILES cmake/Modules/kissConfig.cmake
-    DESTINATION ${CMAKE_MODULES_DIR}/kiss
+    DESTINATION ${CMAKE_MODULES_DIR}/gr_kiss
 )

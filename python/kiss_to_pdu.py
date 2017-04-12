@@ -27,7 +27,7 @@ import collections
 import pmt
 import array
 
-from kiss import *
+from gr_kiss import *
 
 class kiss_to_pdu(gr.sync_block):
     """

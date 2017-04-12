@@ -3,7 +3,7 @@ PKG_CHECK_MODULES(PC_KISS kiss)
 
 FIND_PATH(
     KISS_INCLUDE_DIRS
-    NAMES kiss/api.h
+    NAMES gr_kiss/api.h
     HINTS $ENV{KISS_DIR}/include
         ${PC_KISS_INCLUDEDIR}
     PATHS ${CMAKE_INSTALL_PREFIX}/include

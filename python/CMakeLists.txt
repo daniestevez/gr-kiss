@@ -31,7 +31,7 @@ endif()
 GR_PYTHON_INSTALL(
     FILES
     __init__.py
-    kiss.py
+    gr_kiss.py
     hdlc.py
     kiss_to_pdu.py
     pdu_to_kiss.py
@@ -39,7 +39,7 @@ GR_PYTHON_INSTALL(
     nrzi_encode.py
     nrzi_decode.py
     hdlc_deframer.py
-    check_address.py DESTINATION ${GR_PYTHON_DIR}/kiss
+    check_address.py DESTINATION ${GR_PYTHON_DIR}/gr_kiss
 )
 
 ########################################################################

@@ -3,8 +3,8 @@
   <name>Check AX.25 address</name>
   <key>kiss_check_address</key>
   <category>[kiss]</category>
-  <import>import kiss</import>
-  <make>kiss.check_address($address, $direction)</make>
+  <import>import gr_kiss</import>
+  <make>gr_kiss.check_address($address, $direction)</make>
   <param>
     <name>Address</name>
     <key>address</key>

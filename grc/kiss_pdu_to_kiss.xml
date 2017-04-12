@@ -2,9 +2,9 @@
 <block>
   <name>PDU to KISS</name>
   <key>kiss_pdu_to_kiss</key>
-  <category>kiss</category>
-  <import>import kiss</import>
-  <make>kiss.pdu_to_kiss()</make>
+  <category>gr_kiss</category>
+  <import>import gr_kiss</import>
+  <make>gr_kiss.pdu_to_kiss()</make>
 
   <sink>
     <name>in</name>

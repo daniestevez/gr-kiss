@@ -2,9 +2,9 @@
 <block>
   <name>KISS to PDU</name>
   <key>kiss_kiss_to_pdu</key>
-  <category>kiss</category>
-  <import>import kiss</import>
-  <make>kiss.kiss_to_pdu($control_byte)</make>
+  <category>gr_kiss</category>
+  <import>import gr_kiss</import>
+  <make>gr_kiss.kiss_to_pdu($control_byte)</make>
 
   <param>
     <name>Expect control byte</name>
