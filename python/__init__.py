@@ -38,4 +38,5 @@ from nrzi_encode import nrzi_encode
 from nrzi_decode import nrzi_decode
 from hdlc_deframer import hdlc_deframer
 from check_address import check_address
+from kiss_save_frame import kiss_save_frame
 #
