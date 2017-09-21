@@ -48,15 +48,16 @@ class hdlc_deframer(gr.sync_block):
     """
     docstring for block hdlc_deframer
     """
-    def __init__(self, check_fcs, max_length):
+    def __init__(self, check_fcs, trim_fcs, max_length):
         gr.sync_block.__init__(self,
             name="hdlc_deframer",
             in_sig=[numpy.uint8],
             out_sig=None)
 
         self.bits = collections.deque(maxlen = (max_length+2)*8 + 7)
-        self.ones = 0 # consecutive ones for flag checking
+        self.ones = 0  # consecutive ones for flag checking
         self.check = check_fcs
+        self.trim_fcs = trim_fcs
 
         self.message_port_register_out(pmt.intern('out'))
 
@@ -83,7 +84,9 @@ class hdlc_deframer(gr.sync_block):
                     self.bits.clear()
                     if frame and (not self.check or fcs_ok(frame)):
                         # send frame
-                        buff = array.array('B', frame[:-2]) # trim fcs
+                        if self.trim_fcs:
+                            frame = frame[:-2]
+                        buff = array.array('B', frame)
                         self.message_port_pub(pmt.intern('out'), pmt.cons(pmt.PMT_NIL, pmt.init_u8vector(len(buff), buff)))
                 else:
                     self.bits.append(x)

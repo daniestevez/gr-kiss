@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <block>
-  <name>KISS Save frame</name>
-  <key>kiss_save_frame</key>
+  <name>Frame sink</name>
+  <key>save_frame</key>
   <category>gr_kiss</category>
   <import>import gr_kiss</import>
-  <make>gr_kiss.kiss_save_frame($file)</make>
+  <make>gr_kiss.save_frame($file)</make>
 
   <param>
     <name>File</name>

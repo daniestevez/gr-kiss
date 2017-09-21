@@ -27,21 +27,22 @@ import collections
 import pmt
 import array
 import os
+import base64
+import datetime
 
 from gr_kiss import *
 
-class kiss_save_frame(gr.basic_block):
+class save_frame(gr.basic_block):
     """
-    docstring for block kiss_save_frame
+    docstring for block save_frame
     """
     def __init__(self, filename):
         gr.basic_block.__init__(self,
-            name="kiss_save_frame",
+            name="save_frame",
             in_sig=None,
             out_sig=None)
 
         self.file = open(filename, "w")
-        print "FILE:", filename
 
         self.message_port_register_in(pmt.intern('in'))
         self.set_msg_handler(pmt.intern('in'), self.handle_msg)
@@ -52,10 +53,11 @@ class kiss_save_frame(gr.basic_block):
             print "[ERROR] Received invalid message type. Expected u8vector"
             return
 
+        array = bytearray(pmt.u8vector_elements(msg))
+        packet = base64.b64encode(array)
 
-        table = [int(i) for i in pmt.u8vector_elements(msg)]
-        string = " ".join(["0x%02X" % (i)  for i in table])
-        print string
-        self.file.write(string + '\n')
-	self.file.flush()
+        time = datetime.datetime.now().strftime("%Y-%m-%d_%H:%M:%S")
+
+        self.file.write(time + "," + packet + "\n")
+        self.file.flush()
 
