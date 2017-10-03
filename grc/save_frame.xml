@@ -4,13 +4,28 @@
   <key>save_frame</key>
   <category>gr_kiss</category>
   <import>import gr_kiss</import>
-  <make>gr_kiss.save_frame($file)</make>
+  <make>gr_kiss.save_frame($file, $direction)</make>
 
   <param>
     <name>File</name>
     <key>file</key>
     <value></value>
     <type>file_save</type>
+  </param>
+
+  <param>
+    <name>Direction</name>
+    <key>direction</key>
+    <value>Uplink</value>
+    <type>string</type>
+    <option>
+      <name>Uplink</name>
+      <key>Uplink</key>
+    </option>
+    <option>
+      <name>Downlink</name>
+      <key>Downlink</key>
+    </option>
   </param>
 
   <sink>

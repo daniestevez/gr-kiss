@@ -36,13 +36,14 @@ class save_frame(gr.basic_block):
     """
     docstring for block save_frame
     """
-    def __init__(self, filename):
+    def __init__(self, filename, direction):
         gr.basic_block.__init__(self,
             name="save_frame",
             in_sig=None,
             out_sig=None)
 
         self.file = open(filename, "w")
+        self.direction = {"Uplink": "U", "Downlink": "D"}[direction]
 
         self.message_port_register_in(pmt.intern('in'))
         self.set_msg_handler(pmt.intern('in'), self.handle_msg)
@@ -56,8 +57,8 @@ class save_frame(gr.basic_block):
         array = bytearray(pmt.u8vector_elements(msg))
         packet = base64.b64encode(array)
 
-        time = datetime.datetime.now().strftime("%Y-%m-%d_%H:%M:%S")
+        time = datetime.datetime.now().strftime("%Y-%m-%d_%H:%M:%S:%f")
 
-        self.file.write(time + "," + packet + "\n")
+        self.file.write(time + "," + str(self.direction) + "," + packet + "\n")
         self.file.flush()
 
