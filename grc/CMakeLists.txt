@@ -25,5 +25,6 @@ install(FILES
     kiss_nrzi_decode.xml
     kiss_hdlc_deframer.xml
     save_frame.xml
+    zmq_sub_message_source_bind.xml
     kiss_check_address.xml DESTINATION share/gnuradio/grc/blocks
 )

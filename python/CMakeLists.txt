@@ -40,6 +40,7 @@ GR_PYTHON_INSTALL(
     nrzi_decode.py
     hdlc_deframer.py
     save_frame.py
+    zmq_sub_message_source_bind.py
     check_address.py DESTINATION ${GR_PYTHON_DIR}/gr_kiss
 )
 
