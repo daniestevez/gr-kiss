@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <block>
-  <name>ZMQ SUB Message Source (bind)</name>
-  <key>zmq_sub_message_source_bind</key>
+  <name>Frame sink</name>
+  <key>frame_sink</key>
   <category>gr_kiss</category>
   <import>import gr_kiss</import>
-  <make>gr_kiss.zmq_sub_message_source_bind($addr)</make>
+  <make>gr_kiss.frame_sink($addr)</make>
 
   <param>
     <name>Address</name>
@@ -13,8 +13,9 @@
     <type>string</type>
   </param>
 
-  <source>
-    <name>out</name>
+  <sink>
+    <name>in</name>
     <type>message</type>
-  </source>
+    <optional>1</optional>
+  </sink>
 </block>

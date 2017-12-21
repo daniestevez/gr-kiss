@@ -39,5 +39,6 @@ from nrzi_decode import nrzi_decode
 from hdlc_deframer import hdlc_deframer
 from check_address import check_address
 from save_frame import save_frame
-from zmq_sub_message_source_bind import zmq_sub_message_source_bind
+from frame_source import frame_source
+from frame_sink import frame_sink
 #

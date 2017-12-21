@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <block>
-  <name>Frame sink</name>
+  <name>Save Frame</name>
   <key>save_frame</key>
   <category>gr_kiss</category>
   <import>import gr_kiss</import>

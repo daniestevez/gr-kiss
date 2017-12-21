@@ -9,13 +9,13 @@ import zmq
 import thread
 
 
-class zmq_sub_message_source_bind(gr.basic_block):
+class frame_source(gr.basic_block):
     """
     docstring for block hdlc_framer
     """
     def __init__(self, address):
         gr.basic_block.__init__(self,
-            name="zmq_sub_message_source_bind",
+            name="frame_source",
             in_sig=None,
             out_sig=None)
 
@@ -33,8 +33,11 @@ class zmq_sub_message_source_bind(gr.basic_block):
     def loop(self):
         while True:
             if self.socket.poll(timeout=1) > 0:
-                output_items = self.socket.recv()
+                buff = self.socket.recv()
+                buff = [ord(i) for i in buff]
 
-                pkt = pmt.deserialize_str(output_items)
+                print buff
+
+                pkt = pmt.cons(pmt.PMT_NIL, pmt.init_u8vector(len(buff), buff))
 
                 self.message_port_pub(pmt.intern('out'), pkt)
