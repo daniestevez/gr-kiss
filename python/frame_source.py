@@ -24,7 +24,7 @@ class frame_source(gr.basic_block):
 
         self.context = zmq.Context()
         self.socket = self.context.socket(zmq.SUB)
-        print "Address: |%s|" % address
+        # print "Address: |%s|" % address
         self.socket.bind(address)
         self.socket.setsockopt(zmq.SUBSCRIBE, "")
 
@@ -36,7 +36,7 @@ class frame_source(gr.basic_block):
                 buff = self.socket.recv()
                 buff = [ord(i) for i in buff]
 
-                print buff
+                # print buff
 
                 pkt = pmt.cons(pmt.PMT_NIL, pmt.init_u8vector(len(buff), buff))
 
