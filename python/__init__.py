@@ -42,4 +42,5 @@ from save_frame import save_frame
 from frame_source import frame_source
 from frame_sink import frame_sink
 from pwsat2_ptt import pwsat2_ptt
+from frequency_shift import frequency_shift
 #

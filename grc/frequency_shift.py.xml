@@ -1,0 +1,66 @@
+<block>
+  <name>Frequency Shift</name>
+  <key>frequency_shift</key>
+  <category>[GRC Hier Blocks]</category>
+  <import>import gr_kiss</import>
+  <make>gr_kiss.frequency_shift(
+    bw=$bw,
+    center_frequency=$center_frequency,
+    samp_rate=$samp_rate,
+    transition_width=$transition_width,
+    decimation=$decimation,
+)</make>
+  <callback>set_bw($bw)</callback>
+  <callback>set_center_frequency($center_frequency)</callback>
+  <callback>set_samp_rate($samp_rate)</callback>
+  <callback>set_transition_width($transition_width)</callback>
+  <callback>set_decimation($decimation)</callback>
+  <param>
+    <name>bandwidth</name>
+    <key>bw</key>
+    <value>0</value>
+    <type>raw</type>
+    <hide>none</hide>
+  </param>
+  <param>
+    <name>center_frequency</name>
+    <key>center_frequency</key>
+    <value>0</value>
+    <type>raw</type>
+    <hide>none</hide>
+  </param>
+  <param>
+    <name>samp_rate</name>
+    <key>samp_rate</key>
+    <value>0</value>
+    <type>raw</type>
+    <hide>none</hide>
+  </param>
+  <param>
+    <name>transition_width</name>
+    <key>transition_width</key>
+    <value>0</value>
+    <type>raw</type>
+    <hide>none</hide>
+  </param>
+  <param>
+    <name>decimation</name>
+    <key>decimation</key>
+    <value>1</value>
+    <type>raw</type>
+    <hide>none</hide>
+  </param>
+  <sink>
+    <name>in</name>
+    <type>complex</type>
+    <vlen>1</vlen>
+  </sink>
+  <source>
+    <name>out</name>
+    <type>complex</type>
+    <vlen>1</vlen>
+  </source>
+  <doc>Grzegorz Gajoch
+/home/gregg/.grc_gnuradio/frequency_shift.py</doc>
+  <grc_source>/home/gregg/pwsat/GSControl/gnuradio/tools/frequency_shift.grc</grc_source>
+</block>

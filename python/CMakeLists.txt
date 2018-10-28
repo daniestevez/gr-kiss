@@ -44,6 +44,7 @@ GR_PYTHON_INSTALL(
     frame_sink.py
     check_address.py
     pwsat2_ptt.py
+    frequency_shift.py
     DESTINATION ${GR_PYTHON_DIR}/gr_kiss
 )
 

@@ -29,5 +29,6 @@ install(FILES
     frame_sink.xml
     kiss_check_address.xml
     pwsat2_ptt.xml
+    frequency_shift.py.xml
     DESTINATION share/gnuradio/grc/blocks
 )
