@@ -27,5 +27,7 @@ install(FILES
     save_frame.xml
     frame_source.xml
     frame_sink.xml
-    kiss_check_address.xml DESTINATION share/gnuradio/grc/blocks
+    kiss_check_address.xml
+    pwsat2_ptt.xml
+    DESTINATION share/gnuradio/grc/blocks
 )
