@@ -42,7 +42,9 @@ GR_PYTHON_INSTALL(
     save_frame.py
     frame_source.py
     frame_sink.py
-    check_address.py DESTINATION ${GR_PYTHON_DIR}/gr_kiss
+    check_address.py
+    pwsat2_ptt.py
+    DESTINATION ${GR_PYTHON_DIR}/gr_kiss
 )
 
 ########################################################################
