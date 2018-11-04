@@ -3,8 +3,8 @@
   <name>PW-Sat2 PTT</name>
   <key>pwsat2_ptt</key>
   <category>[PW-Sat2]</category>
-  <import>import pwsat2</import>
-  <make>pwsat2.pwsat2_ptt($device, $samp_rate, $delay, $predelay, $isPredelayUsed)</make>
+  <import>import gr_kiss</import>
+  <make>gr_kiss.pwsat2_ptt($device, $samp_rate, $delay, $predelay, $isPredelayUsed)</make>
 
   <param>
     <name>Device</name>
